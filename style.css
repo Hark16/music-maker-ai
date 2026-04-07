@@ -1,0 +1,330 @@
+/*
+  Music Maker Web App - Core Styles
+  Focus: Responsive layout, dark theme, and futuristic interactive elements.
+*/
+
+:root {
+  /* Colors */
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-sidebar: #111827;
+  --primary: #38bdf8; /* Neon Blue */
+  --secondary: #818cf8; /* Neon Purple */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #f472b6; /* Pink accent */
+  
+  /* Pad Colors */
+  --pad-white: #e2e8f0;
+  --pad-black: #334155;
+  --pad-active: #38bdf8;
+  
+  /* Spacing & Borders */
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --neon-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.5;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --- Layout --- */
+
+header {
+  height: 70px;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.notation-container {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#notation-box {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  outline: none;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.doc-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.doc-link:hover {
+  color: var(--primary);
+  text-shadow: 0 0 8px var(--primary);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.controls-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.tempo-section {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid-section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.75rem;
+  min-height: 400px;
+}
+
+footer {
+  background-color: var(--bg-sidebar);
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+/* --- Components --- */
+
+button {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+button:hover {
+  background: #334155;
+  border-color: var(--primary);
+  box-shadow: var(--neon-shadow);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.tempo-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tempo-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+input[type="range"].tempo-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #334155;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"].tempo-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.grid-pad {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-pad::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+.grid-pad.white-key {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.grid-pad.black-key {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.grid-pad:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.grid-pad:active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+}
+
+.tab.active {
+  background: var(--bg-card);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* --- Desktop Layout Overrides --- */
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-areas: "sidebar-l grid sidebar-r";
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .controls-section {
+    grid-area: sidebar-l;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .grid-section {
+    grid-area: grid;
+    height: 100%;
+    max-height: 600px;
+  }
+
+  .tempo-section {
+    grid-area: sidebar-r;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+
+  .tempo-slider-container {
+    flex-direction: column;
+    height: 200px;
+  }
+
+  input[type="range"].tempo-slider {
+    writing-mode: bt-lr; /* Vertical slider support in some browsers */
+    appearance: slider-vertical;
+    width: 6px;
+    height: 100%;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+
+  .tabs-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Drum Pad State (Logic would handle label changes, CSS handles UI hide/disable) --- */
+.drum-mode .tempo-section {
+  opacity: 0.5;
+  pointer-events: none;
+}

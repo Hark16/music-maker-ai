@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed user guide and technical documentation for the Music Maker Studio.">
+  <title>Documentation | Music Maker Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      height: auto !important;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding-bottom: 5rem;
+    }
+    
+    .doc-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .doc-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .doc-header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    
+    .doc-section {
+      margin-bottom: 3rem;
+    }
+    
+    .doc-section h2 {
+      color: var(--primary);
+      font-size: 1.75rem;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.1);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .doc-section p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .key-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .feature-card {
+      background: rgba(15, 23, 42, 0.5);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .feature-card h3 {
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+    
+    code {
+      background: #0f172a;
+      color: var(--accent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 700;
+    }
+    
+    .notation-guide {
+      background: #0f172a;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px dashed var(--secondary);
+    }
+    
+    .notation-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .back-btn-container {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+    }
+
+    .back-btn-container button {
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--primary);
+        background: rgba(56, 189, 248, 0.1);
+        color: var(--primary);
+        font-weight: 700;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Override for mobile */
+    @media (max-width: 600px) {
+      .doc-container { padding: 1.5rem; margin: 2rem 1rem; }
+      .key-feature { grid-template-columns: 1fr; }
+      .doc-header h1 { font-size: 2.25rem; }
+      .back-btn-container { top: 1rem; left: 1rem; position: static; margin-bottom: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-btn-container">
+    <a href="index.html"><button>← BACK TO HOME</button></a>
+  </div>
+
+  <div class="doc-container">
+    <header class="doc-header">
+      <h1>Documentation</h1>
+      <p style="color: var(--secondary); font-size: 1.25rem; font-weight: 600;">Complete User Guide for Music Maker Studio</p>
+    </header>
+
+    <section class="doc-section">
+      <h2>Welcome to the Future of Sound</h2>
+      <p>
+        Music Maker Studio is a lightweight yet powerful web-based notation editor designed for musicians, beatmakers, and producers. 
+        It uses <strong>Tone.js</strong> to simulate professional-grade synthesizers and drum machines directly in your browser.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>1. The Studio Interface</h2>
+      <div class="key-feature">
+        <div class="feature-card">
+          <h3>The Notation Box</h3>
+          <p>This is where your composition lives. Each block (e.g., <code>pc120</code>) represents a note played by an instrument at a specific tempo.</p>
+        </div>
+        <div class="feature-card">
+          <h3>The Music Grid</h3>
+          <p>A 12-pad reactive interface. Clicking a pad triggers a sound and automatically inserts a notation block into the editor.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Instrument Tabs</h3>
+          <p>Switch between <strong>Piano</strong>, <strong>Guitar</strong>, <strong>Violin</strong>, and <strong>Drums</strong>. Each instrument has its own unique audio engine.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Tempo Slider</h3>
+            <p>Control the speed of your composition. The studio supports a wide range from <strong>30 BPM</strong> (BPM/Slow) to <strong>300 BPM</strong> (Fast). Note: Your current tempo is automatically saved into each note block you insert.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Master Controls</h3>
+          <p>Play back your entire sequence once, enable <strong>Loop Play</strong> for infinite playback, export it as an audio file, or save your text notation for later use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>2. Understanding Notation</h2>
+      <p>The notation format follows a strict <code>[Prefix][Note][Tempo],</code> structure. This allows you to hand-edit your music or share it easily.</p>
+      
+      <div class="notation-guide">
+        <div class="notation-item">
+          <span><strong>p</strong> : Piano</span>
+          <code>pc120,</code>
+        </div>
+        <div class="notation-item">
+          <span><strong>g</strong> : Guitar</span>
+          <code>ge140,</code>
+        </div>
+        <div class="notation-item">
+          <span><strong>v</strong> : Violin</span>
+          <code>vf#100,</code>
+        </div>
+        <div class="notation-item">
+          <span><strong>d</strong> : Drum (1-12)</span>
+          <code>d1, d4,</code>
+        </div>
+      </div>
+      <p style="margin-top: 1rem; font-style: italic;">Note: Drum pads are represented by their index (1-12) rather than musical notes.</p>
+      
+      <div class="feature-card" style="margin-top: 2rem;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">Drum Sound Key (Pads 1-12)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+          <div>1: Kick</div>
+          <div>2: Snare</div>
+          <div>3: Closed Hi-hat</div>
+          <div>4: Open Hi-hat</div>
+          <div>5: Tom 1</div>
+          <div>6: Tom 2</div>
+          <div>7: Clap</div>
+          <div>8: Crash</div>
+          <div>9: Perc 1</div>
+          <div>10: Perc 2</div>
+          <div>11: Shaker</div>
+          <div>12: Rim Shot</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>3. Special Features</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 2rem;">
+          <strong>🚀 Smart Cursor Navigation:</strong> Use the <strong>Left and Right arrow keys</strong> inside the Notation Box to jump perfectly between "note blocks" for fast editing.
+        </li>
+        <li style="margin-bottom: 2rem;">
+          <strong>🎙 Real-time Exporting:</strong> Click <strong>"Download Music"</strong> to render your entire notation as a high-quality WebM audio file using the built-in Master Recorder.
+        </li>
+        <li style="margin-bottom: 2rem;">
+          <strong>📑 Session Saving:</strong> Use <strong>"Save Notation"</strong> to copy your raw notation code to the clipboard for later reuse.
+        </li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>4. Troubleshooting</h2>
+      <div class="feature-card" style="border-left-color: var(--accent);">
+        <h3>No Sound?</h3>
+        <p>
+          1. Ensure you clicked the <strong>"START AUDIO ENGINE"</strong> overlay on load.<br>
+          2. Check if your browser tab is muted.<br>
+          3. If the Guitar still doesn't sound, refresh the page to clear the cache.<br>
+          4. Ensure you are using <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> for the best audio experience.
+        </p>
+      </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 4rem; color: var(--text-muted); font-size: 0.875rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;">
+      &copy; 2026 Music Maker | Built with Tone.js & Pure JavaScript
+    </footer>
+  </div>
+
+</body>
+</html>

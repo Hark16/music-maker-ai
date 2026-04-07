@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A futuristic, responsive Music Maker Web App for creating beats and melodies.">
+  <title>AI Music Maker | Futuristic Studio</title>
+  
+  <!-- Modern Serif/Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="piano-mode">
+
+  <!-- Start Audio Overlay (Needed for Browser Audio Policies) -->
+  <div id="start-overlay" style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.95); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+    <h1 style="color: var(--primary); margin-bottom: 2rem; font-weight: 900; letter-spacing: 0.1em;">AI MUSIC MAKER</h1>
+    <button id="btn-start-audio" style="padding: 1.5rem 3rem; font-size: 1.25rem; border: 2px solid var(--primary); background: transparent; color: var(--primary); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);">START AUDIO ENGINE</button>
+  </div>
+
+  <!-- 1. Notation Editor Box (Top) -->
+  <header>
+    <div class="notation-container">
+      <input type="text" id="notation-box" placeholder="Start clicking pads to compose music..." autocomplete="off" spellcheck="false">
+      <a href="index.html" class="doc-link">Home</a>
+      <a href="documentation.html" class="doc-link">Documentation</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Control Buttons -->
+    <section class="controls-section">
+      <button class="btn-play" id="btn-play">Play Music</button>
+      <button class="btn-loop" id="btn-loop">Loop Play</button>
+      <button class="btn-download" id="btn-download">Download Music</button>
+      <button class="btn-save-notation" id="btn-save-notation">Save Notation</button>
+    </section>
+
+    <!-- 3. Tempo Slider -->
+    <section class="tempo-section" id="tempo-container">
+      <div class="tempo-slider-container">
+        <span class="tempo-label" id="tempo-label">Tempo: 120</span>
+        <input type="range" class="tempo-slider" min="30" max="300" value="120" id="tempo-range">
+      </div>
+    </section>
+
+    <!-- 4. Music Grid (Main Section) -->
+    <section class="grid-section" id="music-grid">
+      <!-- 12 Pads represent 3 columns x 4 rows -->
+      <button class="grid-pad white-key" data-note="C4">C</button>
+      <button class="grid-pad black-key" data-note="C#4">C#</button>
+      <button class="grid-pad white-key" data-note="D4">D</button>
+      
+      <button class="grid-pad black-key" data-note="D#4">D#</button>
+      <button class="grid-pad white-key" data-note="E4">E</button>
+      <button class="grid-pad white-key" data-note="F4">F</button>
+      
+      <button class="grid-pad black-key" data-note="F#4">F#</button>
+      <button class="grid-pad white-key" data-note="G4">G</button>
+      <button class="grid-pad black-key" data-note="G#4">G#</button>
+      
+      <button class="grid-pad white-key" data-note="A4">A</button>
+      <button class="grid-pad black-key" data-note="A#4">A#</button>
+      <button class="grid-pad white-key" data-note="B4">B</button>
+    </section>
+  </main>
+
+  <!-- 5. Instrument Tabs (Bottom) -->
+  <footer>
+    <div class="tabs-container">
+      <button class="tab active" data-instrument="piano">Piano</button>
+      <button class="tab" data-instrument="guitar">Guitar</button>
+      <button class="tab" data-instrument="violin">Violin</button>
+      <button class="tab" data-instrument="drum">Drum Set</button>
+    </div>
+  </footer>
+
+  <!-- Tone.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+  <!-- Logic Scripts -->
+  <script src="setup.js"></script>
+  <script src="editor.js"></script>
+  <script src="player.js"></script>
+  <script src="export.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
