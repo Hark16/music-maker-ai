@@ -203,6 +203,56 @@
     <a href="tool.html" class="btn-cta" style="padding: 1.5rem 4rem; font-size: 1.5rem;">Get Started Free</a>
   </section>
 
+<section id="premade-tunes" style="padding:40px; font-family:Arial, sans-serif; background:#0f172a; color:#fff;">
+  
+  <h2 style="text-align:center; margin-bottom:10px;">
+    🎵 Ready-Made Tunes for Instant Playback
+  </h2>
+  
+  <p style="text-align:center; max-width:700px; margin:0 auto 30px; color:#cbd5f5;">
+    Explore a collection of popular pre-made tunes that you can instantly use in our music maker.
+    Simply copy the notation below, paste it into the app, and enjoy the melody.
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+
+    <!-- Karzz Tune -->
+    <div style="background:#1e293b; padding:20px; border-radius:12px;">
+      <h3>Karzz Tune</h3>
+      <p id="karzzTune" style="font-size:14px; color:#94a3b8;">
+        gf#120, ge150, gf#150, gg120, gf#120, ge150, gf#150, gg120, gf#120, ge150, gf#150, gg150, ge120, ge150, gc150, ge150, gf#150, gd120, gd150, ge150, gf#150, ge150, gf#150, ge120
+      </p>
+      <button onclick="copyTune('karzzTune', this)" style="margin-top:10px; padding:8px 14px; border:none; border-radius:6px; background:#38bdf8; cursor:pointer;">
+        Copy
+      </button>
+    </div>
+
+    <!-- Nokia Tune -->
+    <div style="background:#1e293b; padding:20px; border-radius:12px;">
+      <h3>Nokia Tune</h3>
+      <p id="nokiaTune" style="font-size:14px; color:#94a3b8;">
+        pb230, pa230, pc#100, pd#100, pb230, pa230, pc#100, pd#100, pf#230, pe230, pg#100, pb100, pe70
+      </p>
+      <button onclick="copyTune('nokiaTune', this)" style="margin-top:10px; padding:8px 14px; border:none; border-radius:6px; background:#38bdf8; cursor:pointer;">
+        Copy
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function copyTune(id, btn) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerText = "Copied!";
+      setTimeout(() => {
+        btn.innerText = "Copy";
+      }, 1500);
+    });
+  }
+</script>
+  
   <!-- Footer -->
   <footer>
     <div class="footer-grid">
