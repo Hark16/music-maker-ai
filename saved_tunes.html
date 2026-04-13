@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Primary Meta Tags -->
+    <title>Saved Tunes - Your Custom Music Library | MusicMakerAI</title>
+    <meta name="description" content="View and manage your saved music compositions and custom tunes created with MusicMakerAI.">
+    <meta name="author" content="MusicMakerAI.in">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.png" alt="MusicMakerAI Logo" style="width: 40px; height: 40px; object-contain;">
+                <span class="logo-text">Music Maker <span class="accent">AI</span></span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden" style="background: none; border: none; color: var(--secondary); font-size: 1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul id="menu" class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">AI Music Studio</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="ai_music_news.html">Music News</a></li>
+                <li><a href="saved_tunes.html" class="active">Saved Tunes</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="padding: 10px 20px;">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div data-animate>
+                <i class="fa-solid fa-music" style="font-size: 4rem; color: var(--secondary); margin-bottom: 2rem;"></i>
+                <h1>many tunes are comming soon....</h1>
+                <p class="subtitle" style="margin-top: 20px;">
+                    We are building a cloud-sync feature to save and share your masterpieces. Stay tuned for the update!
+                </p>
+                <div class="cta-container" style="margin-top: 40px;">
+                    <a href="tool.html" class="btn btn-primary">Go to Studio</a>
+                    <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for saved tunes -->
+        <section id="placeholders" style="padding-top: 0;">
+            <div class="grid-container">
+                <div class="glass-card" style="padding: 40px; text-align: center; opacity: 0.5;" data-animate>
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                    <h3>Cloud Storage</h3>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="glass-card" style="padding: 40px; text-align: center; opacity: 0.5;" data-animate>
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🌐</div>
+                    <h3>Public Sharing</h3>
+                    <p>Coming Soon</p>
+                </div>
+                <div class="glass-card" style="padding: 40px; text-align: center; opacity: 0.5;" data-animate>
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎧</div>
+                    <h3>Playlist Player</h3>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col" data-animate>
+                <a href="#" class="logo-container" style="margin-bottom: 1.5rem;">
+                    <span class="logo-text">MusicMakerAI<span class="accent">.in</span></span>
+                </a>
+                <p>The future of sound is here. Powering next-gen <strong>ai song makers</strong> and creators worldwide.</p>
+            </div>
+            <div class="footer-col" data-animate>
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="tool.html">AI Music Maker</a></li>
+                    <li><a href="tool.html">Beat Maker AI</a></li>
+                    <li><a href="tool.html">AI Song Generator</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-animate>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="ai_music_news.html">AI Music News</a></li>
+                    <li><a href="saved_tunes.html" class="active">Saved Tunes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" data-animate>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MusicMakerAI.in - The Premier AI Music Maker. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('mobile-menu-active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Scroll Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
